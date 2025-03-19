@@ -1,92 +1,49 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-const styles = {
-    container : {
-    display: 'flex',
-    flexDirection: 'column',
-    padding: '20px',
-    margin: '2rem ',
-    // alignItems: 'center',
-    // justifyContent: 'center',
-    height: '20vh',
-    backgroundColor: '#424242',
-    borderRadius: '10px',
-    width: '70vw'
-    },
-    inputBox: {
-        // padding: '10px',
-        // margin: '10px',
-        // border: '2px solid #424242',
-        borderRadius: '5px',
-        width: '250px',
-        fontSize: '16px',
-      }
-  };
-  
+const Input = () => {
 
-  
-  const[isOpen,setIsOpen] = useState(false)
+    const borderStyle = {
+      
+         width: '65%',
+         height: '6rem'
+    };
+    const inputstyle = {
+      border: 'none',
+      outline: 'none',
+      width: '100%',
+      overflow: 'hidden'
+    };
+    const clearMsg  = () =>{
+      // this will clear the message after sending the propmt
+    }
+
+    const send = ()=>{
+      // the propmt will display on the console
+      console.log('message sent', );
+      clearMsg()
+    }
+
+  return (
+    <div className='flex justify-center items-center mt-15'>
+
+      <div style={borderStyle} className='flex flex-col border-2   border-white w-50 h-15 rounded-2xl'>
+
+      <div className='flex justify-between m-3 '>
+      <input style={inputstyle} type="text" placeholder='How Can i assist you today' className='' />
+      <img src="src/assets/send.png" alt="" className='h-6 cursor-pointer ' onClick={send}/>
+      </div>
+
+      <div>
+        <img src="src/assets/upload_icon.png" alt="" className='h-7 pl-2 cursor-pointer' />
+
+      </div>
+
+    </div>
 
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
 
-  
-  const Input = () => {
-
-
-
-    return (
-    // <div className=' mt-6 '>
-    //     <div className='border-2 w-200 p-3 min-h-20 rouded-full rounded-full'>
-    //         <input type="text" placeholder='What do you want to know' className='border-hidden width-200'/>
-    //     </div>
-    // </div>
-
-    <div style={styles.container}> 
-         <input 
-         type="text" 
-         placeholder= "What do you want to know"
-         style={styles.inputBox}
-         />
-         <div
-          className='flex justify-between pt-3 mt-2'>
-          <img src="src\assets\upload_icon.png" alt="" 
-          className='h-7 cursor-pointer'
-          />
-
-          <div className='dropdown'>
-          
-          <div onClick={toggleDropdown} 
-          
-          className='flex items-center p-2   text-center' >
-            <img src="
-            src\assets\arrow_drop_down.png" alt="" 
-            className='h-5 w-7 cursor-pointer '
-            />
-
-              </div>
-            
-             {isOpen &&(
-              <ul className="dropdown-menu">
-                <li className="dropdown-item">Option 1</li>
-                <li className="dropdown-item">Option 2</li>
-                <li className="dropdown-item">Option 3</li>
-              </ul>
-            )}
-          
-            
-            
-            </div>
-            </div>
-         </div>
-   
-    
+    </div>
   )
-
-
- 
 }
 
 export default Input

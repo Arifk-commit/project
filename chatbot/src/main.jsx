@@ -12,6 +12,6 @@ createRoot(document.getElementById('root')).render(
     <Navbar />
     <Header />
     <Input />
-    <App />
+    {/* <App /> */}
   </StrictMode>,
 )
